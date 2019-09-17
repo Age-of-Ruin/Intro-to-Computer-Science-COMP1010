@@ -1,10 +1,4 @@
-import java.util.Date;
-import javax.swing.JOptionPane;
-import java.io.File;
-import java.io.FileNotFoundException;
-import javax.swing.JFileChooser;
-
-/*
+/**
  * RichardConstantineA2Q3
  * 
  * COMP 1010
@@ -13,10 +7,16 @@ import javax.swing.JFileChooser;
  * @author     Richard Constantine
  * @version    2012/11/28
  * 
- * Purpose:    To create different filters for pictures using the raster image as
+ * Purpose:    To create different filters for pictures via rasterizing the image as
  *             an array of pixels that can be modified accordingly to accomplish
  *             the desired effect.
  */
+
+import java.util.Date;
+import javax.swing.JOptionPane;
+import java.io.File;
+import java.io.FileNotFoundException;
+import javax.swing.JFileChooser;
 
 public class RichardConstantineA4Q2
 {

@@ -1,12 +1,4 @@
-import java.util.Date;
-import javax.swing.JOptionPane;
-import java.io.File;
-import java.io.FileNotFoundException;
-import javax.swing.JFileChooser;
-
-
-
-/*
+/**
  * RichardConstantineA4Q3
  * 
  * COMP 1010
@@ -18,6 +10,12 @@ import javax.swing.JFileChooser;
  * Purpose:    To create a white canvas using the image library.jar with given methods and draw 
  *             different(2-3) images with different scales and at different positions on the canvas.
  */
+
+import java.util.Date;
+import javax.swing.JOptionPane;
+import java.io.File;
+import java.io.FileNotFoundException;
+import javax.swing.JFileChooser;
 
 public class RichardConstantineA4Q3
 {
