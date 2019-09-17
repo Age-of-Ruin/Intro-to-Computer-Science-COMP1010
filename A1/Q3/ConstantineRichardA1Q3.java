@@ -106,15 +106,15 @@ public class ConstantineRichardA1Q3 {
  
 // Runing Equations
  
-earlyMonthCorrection = Math.floor(14.0 - userMonth) / 12.0;      
+earlyMonthCorrection = Math.floor((14.0 - userMonth) / 12.0);      
  
 intermediateYear =  userYear + 4800.0 - earlyMonthCorrection;
 
 intermediateMonth = userMonth + 12.0 * earlyMonthCorrection - 3.0;
   
-leapYears = Math.floor(intermediateYear / 4.0) - Math.floor (intermediateYear / 100.0) + Math.floor (intermediateYear / 400.0);
+leapYears = Math.floor (intermediateYear / 4.0) - Math.floor (intermediateYear / 100.0) + Math.floor (intermediateYear / 400.0);
   
-intermediateDay = Math.floor (153.0 * intermediateMonth + 2.0) / 5.0;
+intermediateDay = Math.floor ((153.0 * intermediateMonth + 2.0) / 5.0);
 
 julianDayNumber = userDay + 365.0 * intermediateYear + intermediateDay + leapYears - 32045.0;
 
@@ -140,3 +140,5 @@ julianDate = julianDayNumber + finalHour + finalMinute + finalSecond;
   }
 
 }
+
+     
