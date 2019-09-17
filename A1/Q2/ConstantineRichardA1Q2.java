@@ -8,8 +8,8 @@
  * @version Oct. 5
  * PURPOSE: To calculate the square root of a number inputted by the user through using 
  * the user's best guess at the root (Babylonian Method).
-
-*/
+ *
+ */
 
 import java.util.Scanner;
 
