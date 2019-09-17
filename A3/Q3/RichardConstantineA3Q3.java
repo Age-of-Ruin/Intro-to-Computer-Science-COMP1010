@@ -1,10 +1,3 @@
-import java.util.Scanner;
-import java.util.Date;
-import javax.swing.JOptionPane;
-import java.io.File;
-import java.io.FileNotFoundException;
-import javax.swing.JFileChooser;
-
 /*
  * RichardConstantineA2Q3
  * 
@@ -19,6 +12,12 @@ import javax.swing.JFileChooser;
  *             using an external file and methods to accomplish this.
  */
 
+import java.util.Scanner;
+import java.util.Date;
+import javax.swing.JOptionPane;
+import java.io.File;
+import java.io.FileNotFoundException;
+import javax.swing.JFileChooser;
 public class RichardConstantineA3Q3
 {
   public static void main(String[] args)

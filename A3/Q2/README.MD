@@ -1,2 +1,2 @@
-# Julian Date Converter
-Converts the users input of the date in year, month, day, hour, minutes, and second form (24 hour clock) as integer values to the Julian Date consisting of a large integer that symbolizes the time since January 1, 4713 BC (usful for astronomers and calculation of astral situations).
+# Seconds Since New Year
+Input a date of the form yyyy/mm/dd and time in the form hh:mm:dd and output an error message if the date does not follow this format. If the date is valid output the number of seconds since new year of that specific year.

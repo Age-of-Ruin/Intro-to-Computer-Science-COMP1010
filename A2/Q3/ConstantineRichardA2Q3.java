@@ -92,10 +92,4 @@ public class ConstantineRichardA2Q3 {
           
         
   }
-}
-       
-
-          
-          
-          
-          
+}  

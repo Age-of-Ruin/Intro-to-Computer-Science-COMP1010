@@ -10,87 +10,84 @@ import javax.swing.JOptionPane;
  * @author     Richard Constantine
  * @version    2012/11/14
  * 
- * Purpose:    Input a  date of the form yyyy:mm:dd and validdate the date using methods as the key approach.
- *             Output an error message if the date is not valid.
- *             If the date is valid output the number of second since new year of that specific year.
+ * Purpose:    Input a date of the form yyyy/mm/dd and time in the form hh:mm:dd and output an error message if the date does not follow this format.
+ *             If the date is valid output the number of seconds since new year of that specific year.
  */
 
 public class RichardConstantineA3Q2
 {
-    public static void main(String[] args)
-    {  
-        Scanner scannerDate;
-        Scanner scannerTime; 
-        String promptDate = "";
-        String promptTime = "";
-        String inputDate = "";
-        String inputTime = "";
-        int userHours = 0;
-        int userMinutes = 0;
-        int userSeconds = 0;
-        int userYear = 0;
-        int userMonth = 0;
-        int userDay = 0;
-        int secondsSinceMidnight = 0;
-        int daysSinceNewYear = 0;
-        int secondsSinceNewYear = 0;
-        final int MIN_HOURS = 0;     // the minimum value allowed for hours
-        final int MAX_HOURS = 23;    // the maximum value allowed for hours
-        final int MIN_MINUTES = 0;   // the minimum value for minutes
-        final int MAX_MINUTES = 59;  // the maximum value for minutes
-        final int MIN_SECONDS = 0;   // the minimum value for seconds
-        final int MAX_SECONDS = 59;  // the maximum value for seconds
-        final int MIN_YEARS = 0;     // the minumum value for years
-        final int MAX_YEARS = 10000; // the maximum value for years
-        final int MIN_MONTHS = 1;    // the minimum value for months
-        final int MAX_MONTHS = 12;   // the maximum value for months
-        final int MIN_DAYS = 1;      // the minimum value for days
-        final int MAX_DAYS = 31;     // the maximum value for days
+    public static void main(String[] args) {  
+      Scanner scannerDate;
+      Scanner scannerTime; 
+      String promptDate = "";
+      String promptTime = "";
+      String inputDate = "";
+      String inputTime = "";
+      int userHours = 0;
+      int userMinutes = 0;
+      int userSeconds = 0;
+      int userYear = 0;
+      int userMonth = 0;
+      int userDay = 0;
+      int secondsSinceMidnight = 0;
+      int daysSinceNewYear = 0;
+      int secondsSinceNewYear = 0;
+      final int MIN_HOURS = 0;     // the minimum value allowed for hours
+      final int MAX_HOURS = 23;    // the maximum value allowed for hours
+      final int MIN_MINUTES = 0;   // the minimum value for minutes
+      final int MAX_MINUTES = 59;  // the maximum value for minutes
+      final int MIN_SECONDS = 0;   // the minimum value for seconds
+      final int MAX_SECONDS = 59;  // the maximum value for seconds
+      final int MIN_YEARS = 0;     // the minumum value for years
+      final int MAX_YEARS = 10000; // the maximum value for years
+      final int MIN_MONTHS = 1;    // the minimum value for months
+      final int MAX_MONTHS = 12;   // the maximum value for months
+      final int MIN_DAYS = 1;      // the minimum value for days
+      final int MAX_DAYS = 31;     // the maximum value for days
+      
+      while (inputDate != null && !inputDate.trim().equals (""));  // prompt for date
+      {
+        promptDate = "Enter the date as yyyy/mm/dd ";
+        inputDate = JOptionPane.showInputDialog(null, promptDate);
+        System.out.println("\nPROMPT:\n" + promptDate);
+        System.out.println("RESPONSE:\n" + inputDate);
         
-        while (inputDate != null && !inputDate.trim().equals (""));  // prompt for date
-        {
-          promptDate = "Enter the date as yyyy/mm/dd ";
-          inputDate = JOptionPane.showInputDialog(null, promptDate);
-          System.out.println("\nPROMPT:\n" + promptDate);
-          System.out.println("RESPONSE:\n" + inputDate);
-          
-          scannerDate = new Scanner (inputDate);
-          scannerDate.useDelimiter("/"); 
-          
-          if (inputDate != null && !inputDate.trim().equals (""))  // prompt for time
-          {   
-            promptTime = "Enter the time as hh:mm:ss ";
-            inputTime = JOptionPane.showInputDialog(null, promptTime);
-            System.out.println("\nPROMPT:\n" + promptTime);
-            System.out.println("RESPONSE:\n" + inputTime);
-          }
-          scannerTime = new Scanner (inputTime);
-          scannerTime.useDelimiter(":"); 
+        scannerDate = new Scanner (inputDate);
+        scannerDate.useDelimiter("/"); 
+        
+        if (inputDate != null && !inputDate.trim().equals (""))  // prompt for time
+        {   
+          promptTime = "Enter the time as hh:mm:ss ";
+          inputTime = JOptionPane.showInputDialog(null, promptTime);
+          System.out.println("\nPROMPT:\n" + promptTime);
+          System.out.println("RESPONSE:\n" + inputTime);
         }
-          
-          userYear = getInRange (scannerDate, MIN_YEARS, MAX_YEARS);
-          userMonth = getInRange (scannerDate, MIN_MONTHS, MAX_MONTHS);
-          userDay = getInRange (scannerDate, MIN_DAYS, MAX_DAYS);
-                                                                           // checks if values are in range
-          userHours = getInRange (scannerTime, MIN_HOURS, MAX_HOURS);
-          userMinutes = getInRange (scannerTime, MIN_MINUTES, MAX_MINUTES);
-          userSeconds = getInRange (scannerTime, MIN_SECONDS, MAX_SECONDS);
+        scannerTime = new Scanner (inputTime);
+        scannerTime.useDelimiter(":"); 
+      }
         
-        if (userHours != -1 && userMinutes != -1 && userSeconds != -1 && userYear != -1 && userMonth != 0 && userDay !=
-            0)
-        {
-          secondsSinceNewYear = secondsSinceNewYear (userYear, userMonth, userDay, userHours, userMinutes, userSeconds);
-          System.out.println ("\nThe number of seconds since the new year is "+ secondsSinceNewYear + ".");
+      userYear = getInRange (scannerDate, MIN_YEARS, MAX_YEARS);
+      userMonth = getInRange (scannerDate, MIN_MONTHS, MAX_MONTHS);
+      userDay = getInRange (scannerDate, MIN_DAYS, MAX_DAYS);
+                                                                        // checks if values are in range
+      userHours = getInRange (scannerTime, MIN_HOURS, MAX_HOURS);
+      userMinutes = getInRange (scannerTime, MIN_MINUTES, MAX_MINUTES);
+      userSeconds = getInRange (scannerTime, MIN_SECONDS, MAX_SECONDS);
+
+      if (userHours != -1 && userMinutes != -1 && userSeconds != -1 && userYear != -1 && userMonth != 0 && userDay != 0) {
+        secondsSinceNewYear = secondsSinceNewYear (userYear, userMonth, userDay, userHours, userMinutes, userSeconds);
+        System.out.println ("\nThe number of seconds since the new year is "+ secondsSinceNewYear + ".");
         // if within range, calcute and display seconds since new years
-          
-        } else {
         
+      } else {
         JOptionPane.showMessageDialog (null, "Invalid or no Input Entered.");  
         System.out.println("\nInvalid input or none found.");
-        // show error message and end program
-        }
-        
-    terminationMethod ();
+      // show error message and end program
+      }
+      
+      scannerDate.close();
+      scannerTime.close();
+      terminationMethod ();
    
     }
 
@@ -124,7 +121,7 @@ public class RichardConstantineA3Q2
      * @return [returns validated token as an int]
      */
      
-    public static int secondsSinceMidnight (int hours, int minutes, int seconds)
+    public static int secondsSinceMidnight(int hours, int minutes, int seconds)
      {
        int secondsSinceMidnight = ((hours * 3600) + (minutes * 60) + seconds);
        
@@ -142,7 +139,7 @@ public class RichardConstantineA3Q2
      * @return [returns number of seconds since midnight(0:0:0) and an int value]
      */
     
-    public static int daysSinceNewYear (int year, int month, int day)
+    public static int daysSinceNewYear(int year, int month, int day)
     {
       boolean leapYear = false;
       int daysSinceNewYear = 0;
@@ -163,27 +160,25 @@ public class RichardConstantineA3Q2
         daysSincePrevMonths[11] = (daysSincePrevMonths[10] + 31); // november
         daysSincePrevMonths[12] = (daysSincePrevMonths[11] + 30); // december
          
-         if (year%4 == 0)
+      if (year%4 == 0)
       {
         leapYear = true;
       
-      } else if ( year%100 == 0 && year %400 != 0)
+      } 
+      
+      if (year%100 == 0 && year %400 != 0)
       {
         leapYear  = false;
       }
       
-      if (leapYear = true)
+      // Note Jan 1 -> day 0 therefore subtract 1 day
+      daysSinceNewYear = daysSincePrevMonths[month] + day - 1;
+
+      if (leapYear = true && month > 2)
       {
-        daysSincePrevMonths[3] += 1;
-          
-        daysSinceNewYear = (daysSincePrevMonths[month] + day); 
-      
-      } else {
-        
-        daysSinceNewYear = (daysSincePrevMonths[month] + day);
-          
-        }
-      
+        daysSinceNewYear += 1;
+      }
+
       return daysSinceNewYear;
     
     }
@@ -199,12 +194,12 @@ public class RichardConstantineA3Q2
      * @return [the number of days since new year that given year as an integer]
      */
     
-    public static int secondsSinceNewYear (int year, int month, int day, int hours, int minutes, int seconds)
+    public static int secondsSinceNewYear(int year, int month, int day, int hours, int minutes, int seconds)
     {
-      int secondsTillDate = (daysSinceNewYear (year, month, day)) * 86400;
+      int secondsTillDate = (daysSinceNewYear(year, month, day)) * 86400;
       
-      int secondsSinceNewYear = secondsTillDate + secondsSinceMidnight (hours, minutes, seconds);
-      
+      int secondsSinceNewYear = secondsTillDate + secondsSinceMidnight(hours, minutes, seconds);
+
       return secondsSinceNewYear;
                                                    
     }                                            
